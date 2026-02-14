@@ -1,0 +1,108 @@
+{
+  "name": "VideoRecord",
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string",
+      "description": "\u89c6\u9891\u4e3b\u9898"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "youtube",
+        "bilibili",
+        "wechat"
+      ],
+      "description": "\u89c6\u9891\u6765\u6e90"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "description": "\u96be\u5ea6\u7b49\u7ea7"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "\u89c6\u9891\u94fe\u63a5"
+    },
+    "video_title": {
+      "type": "string",
+      "description": "\u89c6\u9891\u6807\u9898"
+    },
+    "full_transcript": {
+      "type": "string",
+      "description": "\u5b8c\u6574\u5bf9\u8bdd\u6587\u672c"
+    },
+    "topic_explanation": {
+      "type": "string",
+      "description": "\u4e3b\u9898\u89e3\u91ca"
+    },
+    "pronunciation_tips": {
+      "type": "string",
+      "description": "\u53d1\u97f3\u6280\u5de7"
+    },
+    "grammar_points": {
+      "type": "string",
+      "description": "\u8bed\u6cd5\u8981\u70b9"
+    },
+    "vocabulary_notes": {
+      "type": "string",
+      "description": "\u9ad8\u7ea7\u8bcd\u6c47\u7b14\u8bb0"
+    },
+    "day1_content": {
+      "type": "string",
+      "description": "\u7b2c\u4e00\u5929\u5bf9\u8bdd\u5185\u5bb9"
+    },
+    "day1_intro": {
+      "type": "string",
+      "description": "\u7b2c\u4e00\u5929\u5f00\u573a\u767d"
+    },
+    "day2_content": {
+      "type": "string",
+      "description": "\u7b2c\u4e8c\u5929\u5bf9\u8bdd\u5185\u5bb9"
+    },
+    "day2_intro": {
+      "type": "string",
+      "description": "\u7b2c\u4e8c\u5929\u5f00\u573a\u767d"
+    },
+    "day3_content": {
+      "type": "string",
+      "description": "\u7b2c\u4e09\u5929\u5bf9\u8bdd\u5185\u5bb9"
+    },
+    "day3_intro": {
+      "type": "string",
+      "description": "\u7b2c\u4e09\u5929\u5f00\u573a\u767d"
+    },
+    "day4_content": {
+      "type": "string",
+      "description": "\u7b2c\u56db\u5929\u5bf9\u8bdd\u5185\u5bb9"
+    },
+    "day4_intro": {
+      "type": "string",
+      "description": "\u7b2c\u56db\u5929\u5f00\u573a\u767d"
+    },
+    "day5_content": {
+      "type": "string",
+      "description": "\u7b2c\u4e94\u5929\u5bf9\u8bdd\u5185\u5bb9"
+    },
+    "day5_intro": {
+      "type": "string",
+      "description": "\u7b2c\u4e94\u5929\u5f00\u573a\u767d"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "processing",
+        "completed",
+        "failed"
+      ],
+      "default": "processing"
+    }
+  },
+  "required": [
+    "topic"
+  ]
+}

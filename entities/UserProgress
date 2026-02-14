@@ -1,0 +1,21 @@
+{
+  "name": "UserProgress",
+  "type": "object",
+  "properties": {
+    "video_record_id": {
+      "type": "string",
+      "description": "\u89c6\u9891\u8bb0\u5f55ID"
+    },
+    "completed_days": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "\u5df2\u5b8c\u6210\u7684\u5929\u6570\uff081-5\uff09",
+      "default": []
+    }
+  },
+  "required": [
+    "video_record_id"
+  ]
+}
