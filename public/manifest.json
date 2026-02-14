@@ -1,0 +1,9 @@
+{
+  "name": "Morning English",
+  "short_name": "MorningEnglish",
+  "description": "A platform for morning English reading and practice.",
+  "start_url": "/morning-english/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3498db"
+}
