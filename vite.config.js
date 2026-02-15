@@ -1,20 +1,28 @@
-import base44 from "@base44/vite-plugin"
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
     base: '/morning-english/',
-    logLevel: 'error', // Suppress warnings, only show errors
-    plugins: [
-        base44({
-            // Support for legacy code that imports the base44 SDK with @/integrations, @/entities, etc.
-            // can be removed if the code has been updated to use the new SDK imports from @base44/sdk
-            legacySDKImports: process.env.BASE44_LEGACY_SDK_IMPORTS === 'true',
-            hmrNotifier: true,
-            navigationNotifier: true,
-            visualEditAgent: true
-        }),
-        react(),
-    ]
+    plugins: [react()],
+    server: {
+        proxy: {
+            // 代理 API 请求到后端服务
+            '/api': {
+                target: 'http://localhost:3002',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, '')
+            }
+        }
+    },
+    build: {
+        outDir: 'dist',
+        sourcemap: false,
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    vendor: ['react', 'react-dom', 'axios']
+                }
+            }
+        }
+    }
 });
